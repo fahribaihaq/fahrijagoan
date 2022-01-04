@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+      web:
+        build:
+        container: belajar_django_blog
+        command: gunicorn mysite.wsgi.application --bind 0.0.0.0:9010
+        volumes:
+              - .:/app
+        port:
+              - "9010:9010"
